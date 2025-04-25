@@ -105,11 +105,16 @@ platform :ios do
       key_content: "#{FASTLANE_KEY}"
     )
     
-    upload_to_testflight(
+upload_to_testflight(
       api_key: api_key,
       skip_submission: false,
       ipa: "LoopFollow.ipa",
-      skip_waiting_for_build_processing: true,
+      changelog: "Monthly Update",
+      distribute_external: true,
+      groups: [
+        "External Testers"
+      ],
+      skip_waiting_for_build_processing: false,
     )
   end
 
